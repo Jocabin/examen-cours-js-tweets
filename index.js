@@ -56,7 +56,13 @@ function createElement(tagName, classList = [], content = '') {
 
 tweets.forEach(tweet => {
     // On créer l'élément li, ainsi que son contenu, nombre de likes et auteur
-    const tweetWrapper = createElement('li', ["tweet"])
+    const tweetClasses = ["tweet"]
+
+    if (tweet.likes > 10) {
+        tweetClasses.push('favorite')
+    }
+
+    const tweetWrapper = createElement('li', tweetClasses)
     const tweetContent = createElement('p', ['content'], tweet.content)
     const tweetLikes = createElement('p', ['likes'], tweet.likes)
     const tweetAuthor = createElement('p', ['author'], tweet.author)
