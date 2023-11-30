@@ -1,0 +1,15 @@
+#tweets-list {
+  list-style-type: none;
+  font-family: arial, sans-serif;
+}
+
+.tweet {
+  border: 1px solid gray;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.favorite {
+  border: 2px solid salmon;
+}
