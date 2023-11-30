@@ -54,16 +54,19 @@ function createElement(tagName, classList = [], content = '') {
     return element
 }
 
-// On créer l'élément li, ainsi que son contenu, nombre de likes et auteur
-const firstTweetWrapper = createElement('li', ["tweet"])
-const firstTweetContent = createElement('p', ['content'], firstTweet.content)
-const firstTweetLikes = createElement('p', ['likes'], firstTweet.likes)
-const firstTweetAuthor = createElement('p', ['author'], firstTweet.author)
+tweets.forEach(tweet => {
+    // On créer l'élément li, ainsi que son contenu, nombre de likes et auteur
+    const tweetWrapper = createElement('li', ["tweet"])
+    const tweetContent = createElement('p', ['content'], tweet.content)
+    const tweetLikes = createElement('p', ['likes'], tweet.likes)
+    const tweetAuthor = createElement('p', ['author'], tweet.author)
 
-// On ajoute tous les éléments précedents à la balise <li>
-firstTweetWrapper.appendChild(firstTweetContent)
-firstTweetWrapper.appendChild(firstTweetLikes)
-firstTweetWrapper.appendChild(firstTweetAuthor)
+    // On ajoute tous les éléments précedents à la balise <li>
+    tweetWrapper.appendChild(tweetContent)
+    tweetWrapper.appendChild(tweetLikes)
+    tweetWrapper.appendChild(tweetAuthor)
 
-// On ajoute la balise <li> à la balise <ul>
-tweetsList.appendChild(firstTweetWrapper)
+    // On ajoute la balise <li> à la balise <ul>
+    tweetsList.appendChild(tweetWrapper)
+
+})
